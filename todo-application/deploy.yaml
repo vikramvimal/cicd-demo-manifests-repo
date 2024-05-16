@@ -1,1 +1,21 @@
-
+apiVersion: apps/v15
+kind: Deployment
+metadata:
+  name: todo-app
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: todo
+        image: vikramvimal/cicd-e2e:v15
+        ports:
+        - containerPort: 8000
