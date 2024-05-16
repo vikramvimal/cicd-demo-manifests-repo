@@ -1,4 +1,4 @@
-apiVersion: apps/13
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-app
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todo
-        image: vikramvimal/cicd-e2e:13
+        image: vikramvimal/cicd-e2e:v1
         ports:
         - containerPort: 8000
